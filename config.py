@@ -1,13 +1,11 @@
 
 import os
-from dotenv import load_dotenv
+import streamlit as st
 
-load_dotenv()
+OPENAI_API_KEY = st.secrets.OPENAI_API_KEY
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
-MILVUS_HOST = os.getenv("MILVUS_HOST", "localhost")
-MILVUS_PORT = os.getenv("MILVUS_PORT", "19530")
+MILVUS_HOST = st.secrets.MILVUS_HOST
+MILVUS_PORT = st.secrets.MILVUS_PORT
 MILVUS_COLLECTION_NAME = "ai_gift_recommender"
 
 EMBEDDING_MODEL = "text-embedding-3-large"
